@@ -1,0 +1,6 @@
+include 'microservices:customer-service'
+include 'microservices:item-service'
+include 'microservices:supplier-service'
+include 'api'
+include 'utils'
+
