@@ -1,6 +1,7 @@
 package com.nguyen.microservices.core.customer.presentation.controllers;
 
 import com.nguyen.api.core.customer.Customer;
+import com.nguyen.api.core.customer.CustomerServiceAPI;
 import com.nguyen.utils.exceptions.InvalidInputException;
 import com.nguyen.utils.exceptions.NotFoundException;
 import com.nguyen.utils.http.ServiceUtil;
@@ -8,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.security.InvalidAlgorithmParameterException;
 
 @RestController
-public class CustomerRESTController {
+public class CustomerRESTController implements CustomerServiceAPI{
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerRESTController.class);
 
     private final ServiceUtil serviceUtil;

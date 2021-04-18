@@ -1,4 +1,4 @@
-server.port: 6006
+server.port: 6007
 server.error.include-message: always
 logging:
   level:

@@ -1,6 +1,8 @@
 package com.nguyen.microservices.core.item.presentation.controllers;
 
 import com.nguyen.api.core.item.Item;
+import com.nguyen.api.core.item.ItemServiceAPI;
+import com.nguyen.utils.exceptions.EmptyCartException;
 import com.nguyen.utils.exceptions.InvalidInputException;
 import com.nguyen.utils.exceptions.NotFoundException;
 import com.nguyen.utils.http.ServiceUtil;
@@ -12,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class ItemRESTController {
-    List<Item> items = new ArrayList<>();
+public class ItemRESTController implements ItemServiceAPI {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemRESTController.class);
     private final ServiceUtil serviceUtil;
 
@@ -22,7 +24,9 @@ public class ItemRESTController {
     }
 
     public List<Item> getItems(int customerId){
+        List<Item> items = new ArrayList<>();
         if(customerId < 1) throw new InvalidInputException("Invalid customer ID: "+customerId);
+        else if(customerId == 72) throw new EmptyCartException("Customer "+customerId+" has an empty item list");
         else if(customerId == 102) {
             LOGGER.debug("No items found for customer with ID: {}",customerId);
             return items;
@@ -51,6 +55,7 @@ public class ItemRESTController {
                 4,
                 serviceUtil.getServiceAddress()
         ));
+        LOGGER.debug("Response size for /item: {}",items.size());
         return items;
     }
 }

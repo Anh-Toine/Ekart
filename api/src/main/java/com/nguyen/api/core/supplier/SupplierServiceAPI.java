@@ -4,10 +4,12 @@ import com.nguyen.api.core.item.Item;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 public interface SupplierServiceAPI {
     @GetMapping(
             value = "/supplier",
             produces = "application/json"
     )
-    Supplier getSupplier(@RequestParam(value = "supplierId",required = true)int supplierId);
+    List<Supplier> getSuppliers(@RequestParam(value = "customerId",required = true)int customerId);
 }
