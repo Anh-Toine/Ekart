@@ -27,7 +27,7 @@ public class ItemRESTController implements ItemServiceAPI {
         List<Item> items = new ArrayList<>();
         if(customerId < 1) throw new InvalidInputException("Invalid customer ID: "+customerId);
         else if(customerId == 72) throw new EmptyCartException("Customer "+customerId+" has an empty item list");
-        else if(customerId == 102) {
+        else if(customerId == 103) {
             LOGGER.debug("No items found for customer with ID: {}",customerId);
             return items;
         }

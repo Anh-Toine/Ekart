@@ -1,0 +1,18 @@
+server.port: 6005
+server.error.include-message: always
+
+app:
+  customer-service:
+    host: localhost
+    port: 6008
+  item-service:
+    host: localhost
+    port: 6007
+  supplier-service:
+    host: localhost
+    port: 6006
+
+logging:
+  level:
+    root: INFO
+    com.nguyen: DEBUG

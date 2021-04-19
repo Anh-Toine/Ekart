@@ -38,7 +38,7 @@ public class Customer {
         this.serviceAddress = null;
     }
 
-    public int getId() {
+    public int getCustomerId() {
         return customerId;
     }
 
