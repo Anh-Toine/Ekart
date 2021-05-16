@@ -37,7 +37,9 @@ public class CustomerEntity {
         this.province = province;
         this.serviceAddress = serviceAddress;
     }
+    public CustomerEntity(){
 
+    }
     public String getId() {
         return id;
     }
