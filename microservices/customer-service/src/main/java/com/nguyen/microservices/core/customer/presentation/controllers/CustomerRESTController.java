@@ -26,12 +26,15 @@ public class CustomerRESTController implements CustomerServiceAPI{
         if(customerId < 1){
             throw new InvalidInputException("Invalid ID: "+customerId);
         }
+        /*
         if(customerId == 72){
             throw new EmptyCartException("Customer "+customerId+" has an empty item list");
         }
         if(customerId == 103){
             throw new NotFoundException("No customer found for ID: "+customerId);
         }
+
+         */
         return new Customer(customerId,"Jimmy","Alsworth","1234567890","jimmyal@aol.com","Milk St.",185,"T5A 7H3","Alberta",serviceUtil.getServiceAddress());
     }
 }
