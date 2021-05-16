@@ -1,10 +1,10 @@
-package com.nguyen.microserices.composite.ekart.presentation;
+package com.nguyen.microserices.core.ekartcomposite.getcustomer.presentation;
 
 import com.nguyen.api.composite.ekart.*;
 import com.nguyen.api.core.customer.Customer;
 import com.nguyen.api.core.item.Item;
 import com.nguyen.api.core.supplier.Supplier;
-import com.nguyen.microserices.composite.ekart.integration.EkartCompositeIntegration;
+import com.nguyen.microserices.core.ekartcomposite.getcustomer.integration.EkartCompositeIntegration;
 import com.nguyen.utils.exceptions.NotFoundException;
 import com.nguyen.utils.http.ServiceUtil;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @RestController
 public class CompositeRESTController implements EkartCompositeServiceAPI {
-    private EkartCompositeIntegration integration;
+    private final EkartCompositeIntegration integration;
     private final ServiceUtil serviceUtil;
 
     public CompositeRESTController(EkartCompositeIntegration integration, ServiceUtil serviceUtil) {

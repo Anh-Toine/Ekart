@@ -6,18 +6,18 @@ import com.nguyen.api.core.supplier.Supplier;
 import java.util.List;
 
 public class EkartComposite {
-    private int customerId;
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
-    private String email;
-    private String streetName;
-    private int houseNumber;
-    private String zipCode;
-    private String province;
-    private List<ItemSummary> items;
-    private List<SupplierSummary> suppliers;
-    private ServiceAddress serviceAddress;
+    private final int customerId;
+    private final String firstName;
+    private final String lastName;
+    private final String phoneNumber;
+    private final String email;
+    private final String streetName;
+    private final int houseNumber;
+    private final String zipCode;
+    private final String province;
+    private final List<ItemSummary> items;
+    private final List<SupplierSummary> suppliers;
+    private final ServiceAddress serviceAddress;
 
     public EkartComposite(int customerId, String firstName, String lastName, String phoneNumber, String email, String streetName, int houseNumber, String zipCode, String province, List<ItemSummary> items, List<SupplierSummary> suppliers, ServiceAddress serviceAddress) {
         this.customerId = customerId;

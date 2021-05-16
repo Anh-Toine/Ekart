@@ -1,16 +1,17 @@
 package com.nguyen.api.core.customer;
 
-public class Customer {
-    private int customerId;
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
-    private String email;
-    private String streetName;
-    private int houseNumber;
-    private String zipCode;
-    private String province;
-    private String serviceAddress;
+public class
+Customer {
+    private  int customerId;
+    private  String firstName;
+    private  String lastName;
+    private  String phoneNumber;
+    private  String email;
+    private  String streetName;
+    private  int houseNumber;
+    private  String zipCode;
+    private  String province;
+    private  String serviceAddress;
 
     public Customer(int customerId, String firstName, String lastName, String phoneNumber, String email, String streetName, int houseNumber, String zipCode, String province, String serviceAddress) {
         this.customerId = customerId;
@@ -36,6 +37,46 @@ public class Customer {
         this.zipCode = null;
         this.province = null;
         this.serviceAddress = null;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    public void setHouseNumber(int houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public void setServiceAddress(String serviceAddress) {
+        this.serviceAddress = serviceAddress;
     }
 
     public int getCustomerId() {

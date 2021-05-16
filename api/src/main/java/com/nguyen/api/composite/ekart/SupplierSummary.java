@@ -1,10 +1,10 @@
 package com.nguyen.api.composite.ekart;
 
 public class SupplierSummary {
-    private int supplierId;
-    private String supplierName;
-    private String supplierSite;
-    private String location;
+    private final int supplierId;
+    private final String supplierName;
+    private final String supplierSite;
+    private final String location;
 
     public SupplierSummary(int supplierId, String supplierName, String supplierSite, String location) {
 

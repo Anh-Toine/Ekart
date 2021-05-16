@@ -10,7 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = CustomerServiceApplication.class)
 @ExtendWith(SpringExtension.class)
 @AutoConfigureWebClient
 class CustomerServiceApplicationTests {
@@ -57,7 +57,30 @@ class CustomerServiceApplicationTests {
 				.jsonPath("$.path").isEqualTo("/customer/"+CUSTOMER_ID_NEGATIVE)
 				.jsonPath("$.message").isEqualTo("Invalid ID: "+CUSTOMER_ID_NEGATIVE);
 	}
-
+	@Test
+	public void findCustomerWithEmptyCart(){
+		client.get()
+				.uri("/customer/"+CUSTOMER_ID_EMPTY_CART)
+				.accept(MediaType.APPLICATION_JSON)
+				.exchange()
+				.expectStatus().isEqualTo(HttpStatus.FORBIDDEN)
+				.expectHeader().contentType(MediaType.APPLICATION_JSON)
+				.expectBody()
+				.jsonPath("$.path").isEqualTo("/customer/"+CUSTOMER_ID_EMPTY_CART)
+				.jsonPath("$.message").isEqualTo("Customer "+CUSTOMER_ID_EMPTY_CART+" has an empty item list");
+	}
+	@Test
+	public void findCustomerStringParameter(){
+		client.get()
+				.uri("/customer/"+CUSTOMER_ID_STRING)
+				.accept(MediaType.APPLICATION_JSON)
+				.exchange()
+				.expectStatus().isBadRequest()
+				.expectHeader().contentType(MediaType.APPLICATION_JSON)
+				.expectBody()
+				.jsonPath("$.path").isEqualTo("/customer/"+CUSTOMER_ID_STRING)
+				.jsonPath("$.message").isEqualTo("Type mismatch.");
+	}
 	@Test
 	void contextLoads() {
 	}

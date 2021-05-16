@@ -12,7 +12,7 @@ import java.net.UnknownHostException;
 public class ServiceUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(ServiceUtil.class);
     private final String port;
-    private String serviceAddress = null;
+    private final String serviceAddress = null;
 
     public ServiceUtil(
             @Value("${server.port}") String port

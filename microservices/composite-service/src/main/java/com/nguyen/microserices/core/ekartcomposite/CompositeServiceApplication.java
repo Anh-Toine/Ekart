@@ -1,4 +1,4 @@
-package com.nguyen.microserices.composite.ekart;
+package com.nguyen.microserices.core.ekartcomposite;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

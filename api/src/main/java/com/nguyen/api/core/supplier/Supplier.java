@@ -1,12 +1,12 @@
 package com.nguyen.api.core.supplier;
 
 public class Supplier {
-    private int supplierId;
-    private int customerId;
-    private String supplierName;
-    private String supplierSite;
-    private String location;
-    private String serviceAddress;
+    private  int supplierId;
+    private  int customerId;
+    private  String supplierName;
+    private  String supplierSite;
+    private  String location;
+    private  String serviceAddress;
 
     public Supplier(int customerId,int supplierId, String supplierName, String supplierSite, String location, String serviceAddress) {
         this.customerId = customerId;
@@ -24,6 +24,30 @@ public class Supplier {
         this.supplierSite = null;
         this.location = null;
         this.serviceAddress = null;
+    }
+
+    public void setSupplierId(int supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
+    public void setSupplierSite(String supplierSite) {
+        this.supplierSite = supplierSite;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setServiceAddress(String serviceAddress) {
+        this.serviceAddress = serviceAddress;
     }
 
     public int getCustomerId() {

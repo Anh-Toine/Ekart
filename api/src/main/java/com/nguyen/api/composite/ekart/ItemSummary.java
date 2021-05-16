@@ -1,10 +1,10 @@
 package com.nguyen.api.composite.ekart;
 
 public class ItemSummary {
-    private int itemId;
-    private String itemName;
-    private double itemPrice;
-    private int itemQuantity;
+    private final int itemId;
+    private final String itemName;
+    private final double itemPrice;
+    private final int itemQuantity;
 
     public ItemSummary(int itemId, String itemName, double itemPrice, int itemQuantity) {
         this.itemId = itemId;

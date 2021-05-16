@@ -1,4 +1,4 @@
-package com.nguyen.microserices.composite.ekart.integration;
+package com.nguyen.microserices.core.ekartcomposite.getcustomer.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nguyen.api.core.customer.Customer;
@@ -14,7 +14,6 @@ import com.nguyen.utils.http.EkartErrorInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;

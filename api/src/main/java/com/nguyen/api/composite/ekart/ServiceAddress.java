@@ -1,10 +1,10 @@
 package com.nguyen.api.composite.ekart;
 
 public class ServiceAddress {
-    private String ekartAddress;
-    private String customerAddress;
-    private String itemAddress;
-    private String supplierAddress;
+    private final String ekartAddress;
+    private final String customerAddress;
+    private final String itemAddress;
+    private final String supplierAddress;
 
     public ServiceAddress(String ekartAddress, String customerAddress, String itemAddress, String supplierAddress) {
         this.ekartAddress = ekartAddress;
