@@ -10,7 +10,7 @@ public interface CustomerServiceAPI {
     Customer getCustomer(@PathVariable int customerId);
 
     @PostMapping(
-            value = "/customer/",
+            value = "/customer",
             consumes = "application/json",
             produces = "application/json"
     )
