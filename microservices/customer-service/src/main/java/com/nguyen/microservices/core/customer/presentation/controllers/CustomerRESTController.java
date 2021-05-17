@@ -30,6 +30,7 @@ public class CustomerRESTController implements CustomerServiceAPI{
         if(customerId == 72){
             throw new EmptyCartException("Customer "+customerId+" has an empty item list");
         }
+
         /*
         if(customerId == 103){
             throw new NotFoundException("No customer found for ID: "+customerId);
