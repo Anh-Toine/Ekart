@@ -37,4 +37,14 @@ public class CustomerRESTController implements CustomerServiceAPI{
          */
         return new Customer(customerId,"Jimmy","Alsworth","1234567890","jimmyal@aol.com","Milk St.",185,"T5A 7H3","Alberta",serviceUtil.getServiceAddress());
     }
+
+    @Override
+    public Customer addCustomer(Customer model) {
+        return null;
+    }
+
+    @Override
+    public void deleteCustomer(int customerId) {
+
+    }
 }

@@ -83,6 +83,16 @@ public class EkartCompositeIntegration implements CustomerServiceAPI, ItemServic
         }
     }
 
+    @Override
+    public Customer addCustomer(Customer model) {
+        return null;
+    }
+
+    @Override
+    public void deleteCustomer(int customerId) {
+
+    }
+
     private String getError(HttpClientErrorException e) {
         try {
             return objectMapper.readValue(e.getResponseBodyAsString(), EkartErrorInfo.class).getMessage();

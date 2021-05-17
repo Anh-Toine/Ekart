@@ -47,6 +47,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void deleteCustomer(int customerId) {
-
+        LOG.debug("[CustomerServiceImpl] deleteCustomer: deleted customer with ID: {}",customerId);
+        repo.findByCustomerId(customerId).ifPresent(ce -> repo.delete(ce));
     }
 }

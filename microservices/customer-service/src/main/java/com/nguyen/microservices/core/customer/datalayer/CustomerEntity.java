@@ -23,9 +23,9 @@ public class CustomerEntity {
     private  int houseNumber;
     private  String zipCode;
     private  String province;
-    private  String serviceAddress;
 
-    public CustomerEntity(int customerId, String firstName, String lastName, String phoneNumber, String email, String streetName, int houseNumber, String zipCode, String province, String serviceAddress) {
+
+    public CustomerEntity(int customerId, String firstName, String lastName, String phoneNumber, String email, String streetName, int houseNumber, String zipCode, String province) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,7 +35,6 @@ public class CustomerEntity {
         this.houseNumber = houseNumber;
         this.zipCode = zipCode;
         this.province = province;
-        this.serviceAddress = serviceAddress;
     }
     public CustomerEntity(){
 
@@ -128,11 +127,4 @@ public class CustomerEntity {
         this.province = province;
     }
 
-    public String getServiceAddress() {
-        return serviceAddress;
-    }
-
-    public void setServiceAddress(String serviceAddress) {
-        this.serviceAddress = serviceAddress;
-    }
 }
