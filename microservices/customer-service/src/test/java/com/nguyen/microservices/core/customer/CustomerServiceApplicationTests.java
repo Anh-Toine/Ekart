@@ -15,7 +15,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static reactor.core.publisher.Mono.just;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = CustomerServiceApplication.class, properties = {"spring.data.mongodb.port: 0"})
@@ -69,6 +71,20 @@ class CustomerServiceApplicationTests {
 				.jsonPath("$.customerId").isEqualTo(CUSTOMER_ID_VALID);
 
 		assertTrue(repository.findByCustomerId(CUSTOMER_ID_VALID).isPresent());
+	}
+
+	@Test
+	public void deleteCustomer(){
+		CustomerEntity entity = new CustomerEntity(CUSTOMER_ID_VALID,"firstname","lastname","phonenumber","email","streetName",1,"zipCode","province");
+		repository.save(entity);
+		assertTrue(repository.findByCustomerId(CUSTOMER_ID_VALID).isPresent());
+		client.delete()
+				.uri("/customer/"+CUSTOMER_ID_VALID)
+				.accept(MediaType.APPLICATION_JSON)
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody();
+		assertFalse(repository.findByCustomerId(CUSTOMER_ID_VALID).isPresent());
 	}
 	@Test
 	public void findCustomerNotFound(){

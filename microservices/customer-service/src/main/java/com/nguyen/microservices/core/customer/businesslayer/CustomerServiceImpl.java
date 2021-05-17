@@ -4,6 +4,7 @@ import com.mongodb.DuplicateKeyException;
 import com.nguyen.api.core.customer.Customer;
 import com.nguyen.microservices.core.customer.datalayer.CustomerEntity;
 import com.nguyen.microservices.core.customer.datalayer.CustomerRepository;
+import com.nguyen.utils.exceptions.EmptyCartException;
 import com.nguyen.utils.exceptions.InvalidInputException;
 import com.nguyen.utils.exceptions.NotFoundException;
 import com.nguyen.utils.http.ServiceUtil;
@@ -26,6 +27,9 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public Customer findByCustomerId(int customerId) {
+        if(customerId == 72){
+            throw new EmptyCartException("Customer "+customerId+" has an empty item list");
+        }
         CustomerEntity entity = repo.findByCustomerId(customerId).
                 orElseThrow(() -> new NotFoundException("No customer found for ID: "+customerId));
         Customer customer = mapper.entityToModel(entity);

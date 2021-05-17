@@ -27,9 +27,7 @@ public class CustomerRESTController implements CustomerServiceAPI{
         if(customerId < 1){
             throw new InvalidInputException("Invalid ID: "+customerId);
         }
-        if(customerId == 72){
-            throw new EmptyCartException("Customer "+customerId+" has an empty item list");
-        }
+
 
         /*
         if(customerId == 103){
@@ -49,6 +47,7 @@ public class CustomerRESTController implements CustomerServiceAPI{
 
     @Override
     public void deleteCustomer(int customerId) {
-
+        LOGGER.debug("REST deleteCustomer entity deleted for customerId: {}",customerId);
+        service.deleteCustomer(customerId);
     }
 }
